@@ -2,7 +2,7 @@
 # Python needs to be >3.5
 # This script converts .csv files with header to .tsf files without header for CasaXPS
 
-replacements = [('2022',1000)]
+replacements = [('2022','1000')]
 globpath = './*_SUM.csv'
 
 import os
@@ -21,7 +21,7 @@ for filepath in glob.iglob(globpath, recursive=True):
     for f, r in replacements:
         #s = s.replace(f, r)
         print(list(df.columns)[0])
-        if f in list(df.columns)[0]: df.columns[0]=df.columns[0]-r
+        if f in list(df.columns)[0]: df.columns[0]=df.columns[0]-float(r)
             
     dest_filepath=os.path.splitext(filepath)[0]+'_BE.csv'
    # Write Dataframe df into CSV file
