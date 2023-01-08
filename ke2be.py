@@ -17,7 +17,7 @@ import pandas as pd
 
 for filepath in glob.iglob(globpath, recursive=True):
     # Read CSV file into DataFrame df
-    df = pd.read_csv('filepath.csv', index_col=0)  
+    df = pd.read_csv(filepath, index_col=0)  
     for f, r in replacements:
         #s = s.replace(f, r)
         print(list(df.columns)[0])
