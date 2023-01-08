@@ -21,6 +21,7 @@ for filepath in glob.iglob(globpath, recursive=True):
         #    convert x.val to vbedge-x.val
     dest_filepath=os.path.splitext(filepath)[0]+'_BE.csv'
    # Write Dataframe df into CSV file
-    with open(dest_filepath, "wb") as file:  
-        #s = s.split(b'\n', 1)[1]
-        file.write(s)
+    df.to_csv(dest_filepath, sep=',',header='true')
+    #with open(dest_filepath, "wb") as file:  
+    #    #s = s.split(b'\n', 1)[1]
+    #    file.write(s)
