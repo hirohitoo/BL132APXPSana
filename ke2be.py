@@ -9,9 +9,15 @@ import os
 import glob
 import pandas as pd
 
+#import csv
+#with open('vbedge.csv', newline='') as f0:
+#    reader = csv.reader(f0)
+#    replacements = list(reader)
+#print(replacements)
+
 for filepath in glob.iglob(globpath, recursive=True):
     # Read CSV file into DataFrame df
-    df = pd.read_csv('sample.csv', index_col=0)  
+    df = pd.read_csv('filepath.csv', index_col=0)  
     for f, r in replacements:
         #s = s.replace(f, r)
         print(list(df.columns)[0])
