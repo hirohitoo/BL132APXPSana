@@ -21,9 +21,8 @@ for filepath in glob.iglob(globpath, recursive=True):
     for f, r in replacements:
         #s = s.replace(f, r)
         print(list(df.columns)[0])
-        if f in list(df.columns)[0]:
-            df.columns[0]=df.columns[0]-r
-
+        if f in list(df.columns)[0]: df.columns[0]=df.columns[0]-r
+            
     dest_filepath=os.path.splitext(filepath)[0]+'_BE.csv'
    # Write Dataframe df into CSV file
     df.to_csv(dest_filepath, sep=',',header='true')
