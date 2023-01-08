@@ -1,28 +1,24 @@
 #! /usr/bin/env python3
 # Python needs to be >3.5
-# This script converts .csv files with header to .tsf files without header for CasaXPS
+# This script make .csv files to convert KE to BE
 
-replacements = [('2022','1000')]
 globpath = './*_SUM.csv'
 
 import os
 import glob
 import pandas as pd
 
-#import csv
-#with open('vbedge.csv', newline='') as f0:
-#    reader = csv.reader(f0)
-#    replacements = list(reader)
-#print(replacements)
+file_list=[]
+vbedge_list=[]
+fkey_list=[]
 
-for filepath in glob.iglob(globpath, recursive=True):
-    # Read CSV file into DataFrame df
-    df = pd.read_csv(filepath, index_col=0)  
-    for f, r in replacements:
-        #s = s.replace(f, r)
-        print(list(df.columns)[0])
-        if f in list(df.columns)[0]: df.index=float(r)-df.index
-            
-    dest_filepath=os.path.splitext(filepath)[0]+'_BE.csv'
-   # Write Dataframe df into CSV file
-    df.to_csv(dest_filepath, sep=',',header='true')
+file_list=(glob.glob(globpath, recursive=True))
+
+
+for f in file_list:
+    vbedge_list.append(0)
+    fkey_list.append(os.path.basename(f))
+df2=pd.DataFrame({'FILEkey':fkey_list,'VBedge':vbedge_list})
+dest_filepath='VBedgetable.csv'
+#Write Dataframe df into CSV file
+df2.to_csv(dest_filepath, sep=',',header='true',index=False)
