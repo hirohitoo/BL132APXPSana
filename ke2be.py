@@ -2,7 +2,7 @@
 # Python needs to be >3.5
 # This script converts .csv files with header to .tsf files without header for CasaXPS
 
-replacements = [('2022', '1000')]
+replacements = [('2022',1000)]
 globpath = './*_SUM.csv'
 
 import os
