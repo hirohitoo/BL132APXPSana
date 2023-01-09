@@ -10,7 +10,7 @@ import glob
 import shutil
 
 #import csv
-#with open('vbedge.csv', newline='') as f0:
+#with open('nametable.csv', newline='') as f0:
 #    reader = csv.reader(f0)
 #    replacements = list(reader)
 #print(replacements)
