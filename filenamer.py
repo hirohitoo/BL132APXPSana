@@ -2,20 +2,28 @@
 # Python needs to be >3.5
 # This script converts .csv files with header to .tsf files without header for CasaXPS
 
-replacements = [(b',', b'\t')]
+replacements = [('2022','1000')]
 globpath = './*_SUM.csv'
 
 import os
 import glob
+import shutil
+
+#import csv
+#with open('vbedge.csv', newline='') as f0:
+#    reader = csv.reader(f0)
+#    replacements = list(reader)
+#print(replacements)
 
 for filepath in glob.iglob(globpath, recursive=True):
-    with open(filepath, 'rb') as file:
-        s = file.read()
-        #s = file.readlines()[1:]
-    #s2 = s.split(b’\n’, 1)[1]   
+    # Read CSV file into DataFrame df
+    #df = pd.read_csv(filepath, index_col=0)  
     for f, r in replacements:
-        s = s.replace(f, r)
-    dest_filepath=os.path.splitext(filepath)[0]+'.tsf3'
-    with open(dest_filepath, "wb") as file:  
-        s = s.split(b'\n', 1)[1]
-        file.write(s)
+        #s = s.replace(f, r)
+        #print(list(df.columns)[0])
+        #if f in list(df.columns)[0]: df.index=float(r)-df.index
+        org_filepath='./'+f+'.csv'        
+        new_filepath='./'+r+'.csv'
+        shutil.copy2(org_filepath,new_filepath) 
+   # Write Dataframe df into CSV file
+    #df.to_csv(dest_filepath, sep=',',header='true')
