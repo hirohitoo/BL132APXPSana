@@ -22,3 +22,6 @@ df2=pd.DataFrame({'OrgName':fkey_list,'NewName':fname_list})
 dest_filepath='nametable.csv'
 #Write Dataframe df into CSV file
 df2.to_csv(dest_filepath, sep=',',header='true',index=False)
+
+
+#filename,target_tag,value
