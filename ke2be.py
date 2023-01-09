@@ -10,7 +10,7 @@ import glob
 import pandas as pd
 
 #import csv
-#with open('vbedge.csv', newline='') as f0:
+#with open('VBedgetable.csv', newline='') as f0:
 #    reader = csv.reader(f0)
 #    replacements = list(reader)
 #print(replacements)
