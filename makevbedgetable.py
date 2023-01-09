@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # Python needs to be >3.5
-# This script make .csv files to convert KE to BE
+# This script make a table, which is referenced to convert KE to BE
 
 globpath = './*_SUM.csv'
 
