@@ -17,7 +17,8 @@ file_list=(glob.glob(globpath, recursive=True))
 
 for f in file_list:
     vbedge_list.append(0)
-    fkey_list.append(os.path.basename(f))
+    #fkey_list.append(os.path.basename(f))
+    fkey_list.append(os.path.splitext(os.path.basename(f))[0])
 df2=pd.DataFrame({'FILEkey':fkey_list,'VBedge':vbedge_list})
 dest_filepath='VBedgetable.csv'
 #Write Dataframe df into CSV file
