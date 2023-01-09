@@ -9,14 +9,14 @@ import glob
 import pandas as pd
 
 file_list=[]
-vbedge_list=[]
+fname_list=[]
 fkey_list=[]
 
 file_list=(glob.glob(globpath, recursive=True))
 
 
 for f in file_list:
-    vbedge_list.append(0)
+    fname_list.append(os.path.basename(f))
     fkey_list.append(os.path.basename(f))
 df2=pd.DataFrame({'FILEkey':fkey_list,'VBedge':vbedge_list})
 dest_filepath='VBedgetable.csv'
